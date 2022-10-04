@@ -5,7 +5,7 @@
         <el-card style="margin-top:20px;max-width:800px;margin:auto;opacity:0.8;blackground-color:#0F4677;border-radius: 20px;">
           <div slot="header" style="blackground-color:#0F4677;text-align:center;font-size :25px !important;font-weight: bold !important;">
             <svg-icon icon-class="lock" style="margin-left: 20px" title="完整魔改版:v1.4"/>
-            つつの订阅转换
+            hxdの订阅转换
             <svg-icon icon-class="telegram" style="margin-left: 10px" title="加入Telegram吹水群" @click="gotoTgChannel" />
           </div>
           <el-container>
@@ -253,8 +253,111 @@ export default {
           "混合订阅（mixed）": "mixed",
           "自动判断客户端": "auto",
         },
-        insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
-
+        customBackend: {
+          "ruan自用后端 (腾讯448)": "https://subscribe.csust.top/sub?",
+          "日文哥": "https://api.nameless13.com/sub?",
+          "つつの专属后端 (六核负载均衡-支持IPv4/IPv6)": "https://api.tsutsu.one/sub?",
+          "api.v1.mk（肥羊提供-四端八核负载)": "https://api.v1.mk/sub?",
+          "subcon.dlj.tf (subconverter作者提供) ": "https://subcon.dlj.tf/sub?",
+          "api.dler.io (sub作者&lhie1提供)": "https://api.dler.io/sub?",
+          "api.wcc.best (sub-web作者提供)": "https://api.wcc.best/sub?",
+        },
+        backendOptions: [
+          { value: "https://subscribe.csust.top/sub?" }, 
+          { value: "https://api.nameless13.com/sub?" }, 
+          { value: "https://api.tsutsu.one/sub?" }, 
+          { value: "https://api.v1.mk/sub?" },
+          { value: "https://subcon.dlj.tf/sub?" },
+          { value: "https://api.dler.io/sub?" },
+          { value: "https://api.wcc.best/sub?" },
+        ],
+        remoteConfig: [
+          {
+            label: "universal",
+            options: [
+              {
+                label: "Admin自用",
+                value:
+                  "https://raw.githubusercontent.com/JHruan1/ruanclash/main/myself.ini"
+              },
+              {
+                label: "Admin自用fallback",
+                value:
+                  "https://raw.githubusercontent.com/JHruan1/ruanclash/main/Fallback"
+              },
+              {
+                label: "龟龟专属",
+                value:
+                  "https://raw.githubusercontent.com/guigui717/list/main/guiugi%20.ini"
+              },
+              {
+                label: "龟龟专属 精简版",
+                value:
+                  "https://raw.githubusercontent.com/guigui717/list/main/guigui%20simple.ini"
+              },
+              {
+                label: "猫猫专属",
+                value:
+                  "https://raw.githubusercontent.com/xiaoshenxian233/cool/rule/coolcool.ini"
+              }
+            ]
+          },
+          {
+            label: "customized",
+            options: [
+              {
+                label: "Maying",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/maying.ini"
+              },
+              {
+                label: "Ytoo",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ytoo.ini"
+              },
+              {
+                label: "FlowerCloud",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/flowercloud.ini"
+              },
+              {
+                label: "Nexitally",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/nexitally.ini"
+              },
+              {
+                label: "SoCloud",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/socloud.ini"
+              },
+              {
+                label: "ARK",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ark.ini"
+              },
+              {
+                label: "ssrCloud",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ssrcloud.ini"
+              }
+            ]
+          },
+          {
+            label: "Special",
+            options: [
+              {
+                label: "NeteaseUnblock(仅规则，No-Urltest)",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/netease.ini"
+              },
+              {
+                label: "Basic(仅GEOIP CN + Final)",
+                value:
+                  "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/basic.ini"
+              }
+            ]
+          }
+        ]
       },
       form: {
         sourceSubUrl: "",
