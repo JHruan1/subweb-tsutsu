@@ -254,7 +254,7 @@ export default {
           "自动判断客户端": "auto",
         },
         customBackend: {
-          "ruan自用后端 (腾讯448)": "https://subscribe.csust.top/sub?",
+          "hxd自用后端 (US9929)": "https://subscribe.csust.top/sub?",
           "日文哥": "https://api.nameless13.com/sub?",
           "つつの专属后端 (六核负载均衡-支持IPv4/IPv6)": "https://api.tsutsu.one/sub?",
           "api.v1.mk（肥羊提供-四端八核负载)": "https://api.v1.mk/sub?",
@@ -438,8 +438,8 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash";
-    this.form.customBackend = "https://api.tsutsu.one/sub?";
-    this.form.remoteConfig = "https://cdn.jsdelivr.net/gh/lhl77/sub-ini@main/tsutsu-full.ini";
+    this.form.customBackend = "https://subscribe.csust.top/sub?";
+    this.form.remoteConfig = "Admin自用";
     //this.getBackendVersion();
   },
   methods: {
